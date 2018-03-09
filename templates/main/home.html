@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    RTIK Muda Karawang
+{% endblock %}
+
+{% block content %}
+    <div class="row">
+        <div class="col m4">
+            <div class="card">
+                <div class="card-title">
+
+                </div>
+                <div class="card-content">
+
+                </div>
+            </div>
+        </div>
+        <div class="col m4">
+            <div class="card">
+                <div class="card-title">
+                    Lorem
+                </div>
+                <div class="card-content">
+                    {% lorem %}
+                </div>
+            </div>
+        </div>
+
+        <div class="col m4">
+            <div class="card">
+                <div class="card-title">
+                    Satu
+                </div>
+                <div class="card-content">
+                    {% for foo in 'xxxxx' %}
+                        {% lorem %}
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr>
+    <div class="row">
+
+    </div>
+{% endblock %}

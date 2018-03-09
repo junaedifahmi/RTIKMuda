@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Index
+{% endblock %}
+
+{% block content %}
+
+    <div class="container">
+    {% if object_list %}
+        {% for object in object_list %}
+            <div class="row">
+                <div class="col s12">
+                    <div class="card z-depth-2 large">
+                        <div class="card-image">
+                          {% load static %}
+                          <img src="{% static 'img/Folder.jpg' %}" alt="ini juga foto" class="activator waves-effect">
+                          <span class="card-title activator">{{object.judul}}</span>
+
+                        </div>
+                        <div class="card-content">
+                          {{object.konten}}
+                          <button type="button" name="up">Up</button>
+                          <button type="button" name="up">Down</button>
+                        </div>
+                        <div class="card-reveal">
+                          <span class="card-title"> {{object.judul}} <i class="material-icons right">close</i> </span>
+                          <p>{{object.konten}}</p>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    {% else %}
+        <h1> Kosong </h1>
+    {% endif %}
+
+
+    </div>
+{% endblock %}

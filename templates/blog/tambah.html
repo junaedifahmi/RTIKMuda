@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Tambah Post
+{% endblock %}
+
+{% block content %}
+    <div class="container">
+    <div class="row z-depth-3" style="padding:10px">
+        <form method="post" action="">
+            {% csrf_token %}
+            <div class="input-field">
+              <label> {{form.judul.label}} </label>
+              {{form.judul}}
+              <p class="text-danger">{{form.judul.errors}}</p>
+            </div>
+            <div class="input-field">
+              {% load widget_tweaks %}
+              <label> {{form.konten.label}} </label>
+              {{form.konten | add_class:"materialize-textarea"}}
+            </div>
+           <div class="col s6"><button type="reset" class="btn btn-block"> Reset </button> </div>
+           <div class="col s6"><button type="submit" class="btn btn-block right"> Tambah </button> </div>
+        </form>
+    </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,138 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>{% block title %}
+    Judul
+  {% endblock %}</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--Import Google Icon Font-->
+{#      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">#}
+{#      <!--Import materialize.css-->#}
+{#      <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>#}
+
+
+    <link rel="stylesheet" href="{% static 'materialize/materialize/css/materialize.min.css' %}" media="screen, projection"/>
+    <link rel="stylesheet" href="{% static 'materialize/material-design-icons-master/iconfont/material-icons.css'%}">
+    <style media="screen">
+      header, main, footer{
+        padding-left: 300px;
+      }
+      @media only screen and(max-width : 992px) {
+        header, main, footer{
+          padding-left: 0;
+        }
+      }
+    </style>
+
+
+</head>
+<body>
+    <!-- Ini bagian navigasinya-->
+
+    <div class="navbar-fixed">
+        <nav>
+            <div class="nav-wrapper">
+                <a href="#" class="brand-logo right"> RTIK Muda Karawang </a>
+                <a href="#!" data-activates="slide-out" class="button-collapse show-on-medium-and-up"><i class="material-icons"> account_circle </i></a>
+                <ul>
+                    <li class="nav-content"> <a href="{% url 'blog:index' %}"> Blog </a> </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+    <!-- akhir navigasi -->
+    <ul class="side-nav" id="slide-out">
+        <li>
+            <div class="user-view">
+                <div class="background">
+                    <img src="{% static 'img/cover.jpg' %}" alt="ini foto loh">
+                </div>
+                <a href="#!"> <img src="{% static 'img/Folder.jpg' %}" class="circle" alt="ini juga foto">  </a>
+                <a href=""> <span class="white-text name"> nama </span> </a>
+                <a href=""> <span class="white-text email"> email@someone.com </span> </a>
+            </div>
+        </li>
+        <li> <div class="divider"></div> </li>
+        <ul class="collapsible">
+          <li> <a href="{% url 'blog:index' %}" class="collapsible-header wave">Blog</a> </li>
+        </ul>
+        <li>
+            <!-- Tentang blog atau artikel -->
+            <ul class="collapsible collapsible-accordion">
+                <li>
+                    <a class="collapsible-header"> Artikel <i class="material-icons right">arrow_drop_down</i> </a>
+                    <div class="collapsible-body">
+                        <ul>
+                            <li> <a href="#!"> Buat Artikel <i class="material-icons right">add</i> </a></li>
+                            <li> <a href="#!"> Artikel Baru <i class="material-icons right">min</i> </a> </li>
+                            <li> <a href="#!"> Artikel Saya <i class="material-icons right">arrow_right</i> </a> </li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </li>
+
+        <!-- tentang aktivitas kerelawanan -->
+{#        <li>#}
+{#            <ul class="collapsible collapsibe-accordion">#}
+{#                <li>#}
+{#                    <a class="collapsible-header"> Kerelawanan <i class="material-icons right">arrow_drop_down </i> </a>#}
+{#                    <div class="collapsible-body">#}
+{#                        <ul>#}
+{#                            <li class="disable"> <a href="#!"> Kegiatan </a> </li>#}
+{#                            <li class="disable"> <a href="#!"> Peringkat </a> </li>#}
+{#                            <li class="disable"> <a href="#!"> Level Saya </a> </li>#}
+{#                        </ul>#}
+{#                    </div>#}
+{#                </li>#}
+{#            </ul>#}
+{#        </li>#}
+        <!-- akhir kerelwanan -->
+{#        <li>#}
+{#            <a href="#" class="subheader">  UI</a>#}
+{#        </li>#}
+    </ul>
+    <!-- user informations -->
+
+    <!-- end user informations -->
+{#    <a href="#!" data-activates="slide-out" class="button-collapse show-on-large btn-floating fixed-action-btn"><i class="material-icons"> menu </i></a>#}
+{% block content %}
+    <p class="danger"> Ini isi atuh </p>
+{% endblock %}
+
+    <footer class="page-footer orange">
+        <div class="row">
+            <div class="col m6">
+                <ul class="modal-footer">
+                    <li> <a href="#" class="text-darken-2"> Berita </a> </li>
+                    <li> <a href="#"> Kegiatan </a> </li>
+                    <li> <a href="#"> Pendaftaran Anggota </a> </li>
+                    <li> <a href="#"> Galeri </a> </li>
+                </ul>
+            </div>
+            <div class="col m6">
+                <h3> Relawan TIK Muda Karawang </h3>
+                <p>
+                    Sekretariat : <br>
+                    Phone       : 026-0912-912 <br>
+                    Surel       : <a> informasi@rtikmuda-karawang.or.id </a>
+                </p>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            Dibuat dengan semangat pengabdian oleh : Relawan TIK Muda Karawang dengan dukungan <a href="http://materializecss.com"> Materialize </a>
+        </div>
+    </footer>
+
+    <!--Import jQuery before materialize.js-->
+{#      <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>#}
+{#      <script type="text/javascript" src="js/materialize.min.js"></script>#}
+
+
+    <script src="{% static 'materialize/jQuery/jquery-3.3.1.min.js' %}"></script>
+    <script src="{% static 'materialize/materialize/js/materialize.min.js' %}"></script>
+    <script src="{% static 'materialize/jQuery/init.js' %}"></script>
+</body>
+</html>

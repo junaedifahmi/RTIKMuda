@@ -1,0 +1,26 @@
+
+<div class="navbar-fixed">
+        <nav class="nav-extended">
+            <div class="nav-wrapper">
+                <a href="#" class="brand-logo right"> My SkripSweet </a>
+                <a href="#!" data-activates="slide-out" class="button-collapse show-on-medium-and-up"><i class="material-icons"> menu </i></a>
+            </div>
+        </nav>
+</div>
+
+    <ul class="side-nav" id="slide-out">
+        <li>
+            <div class="user-view">
+                <div class="background">
+                    <img src="{% static 'img/853776-mist-wallpaper.jpg' %}" alt="ini foto loh">
+                </div>
+                <a href="#!"> <img src="{% static 'img/Folder.jpg' %}" class="circle" alt="ini juga foto">  </a>
+                <a href=""> <span class="white-text name"> nama </span> </a>
+                <a href=""> <span class="white-text email"> email@someone.com </span> </a>
+            </div>
+        </li>
+        <li> <div class="divider"></div> </li>
+        {% block menu %}
+            Menunya tolong diisikan
+        {% endblock %}
+    </ul>
