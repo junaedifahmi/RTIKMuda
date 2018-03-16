@@ -8,36 +8,37 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
     <!--Import Google Icon Font-->
-{#      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">#}
-{#      <!--Import materialize.css-->#}
-{#      <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>#}
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <!--Import materialize.css-->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
 
-
-    <link rel="stylesheet" href="{% static 'materialize/materialize/css/materialize.min.css' %}" media="screen, projection"/>
-    <link rel="stylesheet" href="{% static 'materialize/material-design-icons-master/iconfont/material-icons.css'%}">
-    <style media="screen">
-      header, main, footer{
-        padding-left: 300px;
-      }
-      @media only screen and(max-width : 992px) {
-        header, main, footer{
-          padding-left: 0;
-        }
-      }
-    </style>
+{#    <style media="screen">#}
+{#      header, main, footer{#}
+{#        padding-left: 300px;#}
+{#      }#}
+{#      @media only screen and(max-width : 992px) {#}
+{#        header, main, footer{#}
+{#          padding-left: 0;#}
+{#        }#}
+{#      }#}
+{#    </style>#}
 
 
 </head>
 <body>
     <!-- Ini bagian navigasinya-->
 
-    <div class="navbar-fixed">
+    <div class="navbar-fixed" >
         <nav>
             <div class="nav-wrapper">
                 <a href="#" class="brand-logo right"> RTIK Muda Karawang </a>
                 <a href="#!" data-activates="slide-out" class="button-collapse show-on-medium-and-up"><i class="material-icons"> account_circle </i></a>
                 <ul>
+                    <li class="nav-content"> <a href="{% url 'main:home' %}"><i class="material-icons">home</i></a> </li>
                     <li class="nav-content"> <a href="{% url 'blog:index' %}"> Blog </a> </li>
+                    <li class="nav-content"> <a href="#!"> Kegiatan </a> </li>
+                    <li class="nav-content"> <a href="#!"> Galeri </a> </li>
+                    <li class="nav-content"> <a href="#!"> Join Us! </a> </li>
                 </ul>
             </div>
         </nav>
@@ -65,9 +66,9 @@
                     <a class="collapsible-header"> Artikel <i class="material-icons right">arrow_drop_down</i> </a>
                     <div class="collapsible-body">
                         <ul>
-                            <li> <a href="#!"> Buat Artikel <i class="material-icons right">add</i> </a></li>
-                            <li> <a href="#!"> Artikel Baru <i class="material-icons right">min</i> </a> </li>
-                            <li> <a href="#!"> Artikel Saya <i class="material-icons right">arrow_right</i> </a> </li>
+                            <li> <a href="{% url 'blog:tambah' %}"> Buat Artikel <i class="material-icons right">add</i> </a></li>
+{#                            <li> <a href="#!"> Artikel Baru <i class="material-icons right">min</i> </a> </li>#}
+{#                            <li> <a href="#!"> Artikel Saya <i class="material-icons right">arrow_right</i> </a> </li>#}
                         </ul>
                     </div>
                 </li>
@@ -98,41 +99,65 @@
 
     <!-- end user informations -->
 {#    <a href="#!" data-activates="slide-out" class="button-collapse show-on-large btn-floating fixed-action-btn"><i class="material-icons"> menu </i></a>#}
-{% block content %}
-    <p class="danger"> Ini isi atuh </p>
-{% endblock %}
+        {% block content %}
+            <p> Isi atuh</p>
+        {% endblock %}
 
-    <footer class="page-footer orange">
-        <div class="row">
-            <div class="col m6">
-                <ul class="modal-footer">
-                    <li> <a href="#" class="text-darken-2"> Berita </a> </li>
-                    <li> <a href="#"> Kegiatan </a> </li>
-                    <li> <a href="#"> Pendaftaran Anggota </a> </li>
-                    <li> <a href="#"> Galeri </a> </li>
-                </ul>
-            </div>
-            <div class="col m6">
-                <h3> Relawan TIK Muda Karawang </h3>
-                <p>
-                    Sekretariat : <br>
-                    Phone       : 026-0912-912 <br>
-                    Surel       : <a> informasi@rtikmuda-karawang.or.id </a>
-                </p>
+    <footer class="page-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col l6 s12">
+                    <h5 class="white-text">Relawan TIK Muda Karawang</h5>
+                    <p class="grey-text text-lighten-4"> <i>Relawan Teknologi Informasi dan Komunikasi Muda Karawang</i> adalah komunitas kepemanduan yang berusaha mewujudkan Smart City di kota Karawang
+                        Kegiatan yang kami lakukan meliputi literasi digital, penyuluhan penggunaan internet baik, dan pelayanan TIK
+                    </p>
+                </div>
+                <div class="col l4 offset-l2 s12">
+                    <h5 class="white-text">Relawan TIK Muda Karawang</h5>
+                    <div class="row">
+                        <div class="col s4">
+                            Sekretariat
+                        </div>
+                        <div class="col s8">
+                            Jl. H.R Ronggowaluyo, Telukjambe Timur, Karawang - Jawa Barat, 14325
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col s4">
+                            Telepon <span> <i class="material-icons">phone</i> </span>
+                        </div>
+                        <div class="col s8">
+                            0241-981-3239
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col s4">
+                            <span> <i class="material-icons">email</i> </span>
+                        </div>
+                        <div class="col s8">
+                            <a href="mailto:informasi@rtikmuda.karawang.org">informasi@rtikmuda.karawang.org</a>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col s4">
+                            Facebook
+                        </div>
+                        <div class="col s8">
+                            <a href="https://www.facebook.com/relawantikkrw/"> Relawan TIK Muda Karawang </a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
         <div class="footer-copyright">
-            Dibuat dengan semangat pengabdian oleh : Relawan TIK Muda Karawang dengan dukungan <a href="http://materializecss.com"> Materialize </a>
+            <div class="container">
+                © 2018 Dibuat dengan semangat pengabdian oleh RTIK Muda Karawang
+            </div>
         </div>
     </footer>
-
     <!--Import jQuery before materialize.js-->
-{#      <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>#}
-{#      <script type="text/javascript" src="js/materialize.min.js"></script>#}
-
-
-    <script src="{% static 'materialize/jQuery/jquery-3.3.1.min.js' %}"></script>
-    <script src="{% static 'materialize/materialize/js/materialize.min.js' %}"></script>
+     <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
     <script src="{% static 'materialize/jQuery/init.js' %}"></script>
 </body>
 </html>

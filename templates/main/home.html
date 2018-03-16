@@ -6,42 +6,74 @@
 
 {% block content %}
     <div class="row">
-        <div class="col m4">
-            <div class="card">
-                <div class="card-title">
+        <div class="slider">
+            <ul class="slides">
+                <li>
+                    <img src="https://lorempixel.com/580/250/nature/1"> <!-- random image -->
+                    <div class="caption center-align">
+                        <h3>This is our big Tagline!</h3>
+                        <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
+                    </div>
+                </li>
+                <li>
+                    <img src="https://lorempixel.com/580/250/nature/2"> <!-- random image -->
+                    <div class="caption left-align">
+                        <h3>Left Aligned Caption</h3>
+                        <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
+                    </div>
+                </li>
+                <li>
+                    <img src="https://lorempixel.com/580/250/nature/3"> <!-- random image -->
+                    <div class="caption right-align">
+                        <h3>Right Aligned Caption</h3>
+                        <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
+                    </div>
+                </li>
+                <li>
+                    <img src="https://lorempixel.com/580/250/nature/4"> <!-- random image -->
+                    <div class="caption center-align">
+                        <h3>This is our big Tagline!</h3>
+                        <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
 
+    <div class="row">
+        <div class="col m4">
+            <div class="card" style="background-color: #b1b2b3">
+                <div class="card-title">
+                    <h2> Literasi Digital </h2>
                 </div>
                 <div class="card-content">
-
+                    <p>
+                        Untuk mewujudkan SmartCity di Kota Karawang, tidak hanya perlu dikembangkan infrastruktur dan fasilitas saja. Dibutuhkan juga pengguna yang cerdas dalam menggunakan perangkat TIK
+                    </p>
                 </div>
             </div>
         </div>
         <div class="col m4">
-            <div class="card">
+            <div class="card" style="background-color: #e2e2e2">
                 <div class="card-title">
-                    Lorem
+                    <h2> Pengembangan Keahlian </h2>
                 </div>
                 <div class="card-content">
-                    {% lorem %}
+                    Perkembangan TIK tidak akan bermanfaat banyak bila tidak ditunjang dengan pengembangan keahlian manusia menggunakannya. It's Human and Robot VS Problem not Human VS Robot.
                 </div>
             </div>
         </div>
 
         <div class="col m4">
-            <div class="card">
+            <div class="card" style="background-color: #7d6a4e">
                 <div class="card-title">
-                    Satu
+                    <h2> Pelayanan TIK </h2>
                 </div>
                 <div class="card-content">
-                    {% for foo in 'xxxxx' %}
-                        {% lorem %}
-                    {% endfor %}
+                    Pelayanan TIK ditujukan untuk pusat pengaduan dan bantuan masyarakat dalam mengunakan perangkat TIK
                 </div>
             </div>
         </div>
     </div>
     <hr>
-    <div class="row">
-
-    </div>
 {% endblock %}
